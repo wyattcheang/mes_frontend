@@ -1,0 +1,5 @@
+mutation insertIntoRawMaterialsSingle($values: RawMaterialsInsertInput!) {
+  insertIntoRawMaterialsSingle(values: $values) {
+    materialId
+  }
+}

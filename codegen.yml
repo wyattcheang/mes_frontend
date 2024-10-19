@@ -1,0 +1,19 @@
+overwrite: true
+schema: 'https://mse-backend.onrender.com/graphql'
+documents:
+  - src/**/*.graphql
+generates:
+  src/gql/@types/index.ts:
+    plugins:
+      - typescript
+  src/gql:
+    preset: near-operation-file
+    presetConfig:
+      extension: .ts
+      baseTypesPath: '@types/index.ts'
+    plugins:
+      - typescript-operations
+      - typescript-vue-apollo
+hooks:
+  afterAllFileWrite:
+    - prettier --write
